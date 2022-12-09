@@ -18,7 +18,7 @@ put the files into `Caffemodel\Model`. Find an image you want to colorize and ad
 
 # Image colorization by caffemodel
 
-The way we used the caffemodel was by first converting an image to black and white increasing it's saturation before starting the colorization. Later we will compare this to not doing any preprosessing of the original black and white image to see if it helped. One caveat to our comparison is that even if one pixel has an increased in R + 1 from the original it will still count as a much as if it were R + 100.
+The way we used the caffemodel was by first converting an image to black and white increasing it's saturation before starting the colorization. Later we will compare this to not doing any preprosessing of the original black and white image to see if it helped. One caveat to our comparison is that even if one pixel has an increased in R + 1 from the original it will still count as a much as if it were R + 100. Rhe effectivness of the saturation is a bit modest since to really increase it's accuary we need to change the weights of the models we used.
 The codebase is based from geeksforgeeks code https://www.geeksforgeeks.org/black-and-white-image-colorization-with-opencv-and-deep-learning/ we modified it aswell and added some functionality and made it streamlined for us.
 
 # Results
