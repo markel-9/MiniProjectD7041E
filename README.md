@@ -13,8 +13,8 @@ In this project we have used two models capable of restoring color to grayscale 
 
 
 ## Caffemodel
-To setup the caffemodel start by downloading the repository and the weights from: https://drive.google.com/drive/folders/1FaDajjtAsntF_Sw5gqF0WyakviA5l8-a . 
-Put all the files into `Caffemodel\Model`. Find an image you want to colorize and add it into the `colored` folder inside `Caffemodel\images`, then just run the program.
+To setup the caffemodel start by downloading the repository and the weights from: https://drive.google.com/drive/folders/1FaDajjtAsntF_Sw5gqF0WyakviA5l8-a and 
+put the files into `Caffemodel\Model`. Find an image you want to colorize and add it into the `colored` folder inside `Caffemodel\images`, then just run the program.
 
 # Image colorization by caffemodel
 
