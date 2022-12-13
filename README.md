@@ -94,6 +94,7 @@ Accuracy:`0.637`, the difference between the two is around `-4.74E-5`
 
 # Evaluation
 The advanced model is an improvement of the simple model as it can be trained on more images and as such more features but it requires a lot of time/cpu in order to be created making it somewhat unpractical to train on larger sets of data.
+
 The Caffemodel is a bit innacruate in it's shading of colors and the preprossesing method we used to increase it's saturation does not always better the accuracy. But as forementioned it's hard to develop a method to evaluate colorization accuracy.
 
 
