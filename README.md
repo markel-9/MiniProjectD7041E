@@ -42,6 +42,9 @@ As we see with this img the model is trained on the woman and can manage to rest
 ### Advanced model
 The program did a fairly good job, the main issues we saw were some inaccuracy in shading the colors(T1-T3) and sometimes the backgrounds had innacurate colors(T2). 
 
+![image](https://user-images.githubusercontent.com/60612841/207372486-7b3cb7a9-9ac0-4f04-b7d4-6197a8a7b66e.png)
+
+
 ### Caffemodel / Advanced pre-trained model
 Here are some of the outpus for the caffemodel, the left picture is the original picture and the right is the colorized.
 
