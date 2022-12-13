@@ -28,8 +28,8 @@ Caffeemodel is a deep learning framework and we use already created weights for 
 
 ### Caffemodel / Advanced pre-trained model
 
-The way we used the caffemodel was by first converting an image to black and white increasing it's saturation before starting the colorization. Later we will compare this to not doing any preprosessing of the original black and white image to see if it helped. One caveat to our comparison is that even if one pixel has an increased in R + 1 from the original it will still count as a much as if it were R + 100. The effectivness of the saturation is a bit modest since to really increase it's accuary we need to change the weights of the models we used.
-The codebase is based from geeksforgeeks code https://www.geeksforgeeks.org/black-and-white-image-colorization-with-opencv-and-deep-learning/ we modified it aswell and added some functionality and made it streamlined for us.
+The way we used the caffemodel was by first converting an image to black and white increasing it's saturation before starting the colorization. Later we will compare this to not doing any preprosessing of the original black and white image to see if it helped. One caveat to our comparison is that even if one pixel has an increased in R + 1 from the original it will still count as a much as if it were R + 100, the accuracy is based othe formula `(r+g+b)/('dimensions of picture' * 3)`. The effectivness of the saturation is a bit modest and sometimes decreases the accuracy. To really increase it's accuary we need to train the weights of the models we used.
+The codebase is based of geeksforgeeks code https://www.geeksforgeeks.org/black-and-white-image-colorization-with-opencv-and-deep-learning/ we modified it aswell and added some functionality and made it streamlined for us.
 
 # Results
 
@@ -46,34 +46,40 @@ The program did a fairly good job, the main issues we saw were some inaccuracy i
 Here are some of the outpus for the caffemodel, the left picture is the original picture and the right is the colorized.
 
 #### Saturated T1
-![Screenshot 2022-12-09 153121](https://user-images.githubusercontent.com/120106208/206734686-515ff36d-d5f3-4e80-aeb9-6435751818eb.png)
-`R: 125074  G: 188954  B: 57200`
+![Screenshot 2022-12-13 121106](https://user-images.githubusercontent.com/120106208/207303043-14d3f8b4-5fcb-4589-83c5-084bc53e6d65.png)
+`R: 420678  G: 1015762  B: 791926`
 As we can see the green value is quite high since the tree in the picture is not as green and more brown colored.
-
+Accuracy:`0.585`
 #### Not Saturated T1
-![Screenshot 2022-12-09 153316](https://user-images.githubusercontent.com/120106208/206734479-155a0191-37b1-42bd-8175-25ffedf32984.png)
-`R: 116567  G: 200574  B: 60275`
-
+![Screenshot 2022-12-13 121045](https://user-images.githubusercontent.com/120106208/207302957-615ac633-6ca6-4e68-a79c-29028006b905.png)
+`R: 420759  G: 1015784  B: 791858`
+Accuracy:`0.585`, the difference between the two is around `-9.129E-6`(Not satureted - saturated)
 #### Saturated T2
-![Screenshot 2022-12-09 155519](https://user-images.githubusercontent.com/120106208/206735127-b67ad3ce-3976-4ddb-8a58-e577bb139f54.png)
-`R: 1246894  G: 126337  B: 717091`
+
+![Screenshot 2022-12-13 121836](https://user-images.githubusercontent.com/120106208/207304257-22edaeb4-0d9c-4bfe-bb91-7483c5b89c0d.png)
+`R: 1215525  G: 116878  B: 703572`
 This picture has been reshaped since it's resolution was larger than my montior, but the comparison was made by the original sized images  the blue is quite significant higher since the hills in the background are actually blue rather than green.
+Accuracy:`0.452`
 
 #### Not Saturated T2
-![Screenshot 2022-12-09 155159](https://user-images.githubusercontent.com/120106208/206735663-85e3df11-f6ce-43c4-942e-8344bbf6f1fd.png)
-`R: 1246195  G: 127364  B: 716987`
+![Screenshot 2022-12-13 121932](https://user-images.githubusercontent.com/120106208/207304389-dad1697b-7f9a-42d9-96f2-3ad795a6d0d6.png)
+`R: 1214169  G: 119143  B: 703305`
+Accuracy:`0.453`, the difference between the two is around `1.43E-6`
+
 
 #### Saturated T3
 ![Screenshot 2022-12-09 161151](https://user-images.githubusercontent.com/120106208/206735776-d5c6e35b-9c78-4f3c-8e02-dab9cc25038e.png)
 `R: 539146  G: 598922  B: 1024964`
-The high blue value is due to the really dark blue on the left hand side of the picture.
+The high blue value is due to the really dark blue on the left hand side of the picture. Accuracy:`0.637`
 
 #### Not Saturated T3
 ![Screenshot 2022-12-09 161312](https://user-images.githubusercontent.com/120106208/206735892-bdfcd25a-92d1-44c0-b7ae-d2313139c748.png)
 `R: 539267  G: 598991  B: 1024935`
+Accuracy:`0.637`, the difference between the two is around `-4.74E-5`
 
 # Evaluation
-`TODO: Evaluate`
+## Caffemodel / Advanced pre-trained model
+The Caffemodel is a bit innacruate in it's shading of colors and the preprossesing method we used to increase it's saturation does not always better the accuracy. But as forementioned it's hard to develop a method to evaluate colorization accuracy.
 
 # Final words
 To train a good model it takes large datasets with a lot of different features. According to our research to train a ok model with verry few features it's normal that it needs to train for 1 day. To get a good model that can find a lot of different features this time takes even longer. Thus it's a good thing that there exists these pre-trained models avalible.
