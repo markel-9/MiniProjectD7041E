@@ -24,7 +24,7 @@ Each black and white image consists of 1 layer where each pixel has a value betw
 This model is a neural net that trains on only one image thus it only becomes good to restore the same image back from black and white to colorized. This has very litte practical use but it is a good entryway to understand the advanced model.
 
 ### Advanced model
-Caffeemodel is a deep learning framework and we use already created weights for our testing. The colorizing is fairly good although the size of the weight file is only 126MB so we don't expect anything increadibly accurate.
+
 
 ### Caffemodel / Advanced pre-trained model
 
