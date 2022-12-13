@@ -24,9 +24,10 @@ Each black and white image consists of 1 layer where each pixel has a value betw
 This model is a neural net that trains on only one image thus it only becomes good to restore the same image back from black and white to colorized. This has very litte practical use but it is a good entryway to understand the advanced model.
 
 ### Advanced model
-Caffeemodel is a deep learning framework and we use already created weights for our testing. The colorizing is fairly good although the size of the weight file is only 126MB so we don't expect anything increadibly accurate.
+The advanced model uses the principles of the simple model and improves by adding the ability of training more features through training on more images as training data. This takes some time as five images as ipnut data took roughly 1.5 hours so larger sets than that i would recommend leaving the computer on over night with sleep mode disabled to let the model finish. 
 
 ### Caffemodel / Advanced pre-trained model
+Caffeemodel is a deep learning framework and we use already created weights for our testing. The colorizing is fairly good although the size of the weight file is only 126MB so we don't expect anything increadibly accurate.
 
 The way we used the caffemodel was by first converting an image to black and white increasing it's saturation before starting the colorization. Later we will compare this to not doing any preprosessing of the original black and white image to see if it helped. One caveat to our comparison is that even if one pixel has an increased in R + 1 from the original it will still count as a much as if it were R + 100, the accuracy is based othe formula `(r+g+b)/('dimensions of picture' * 3)`. The effectivness of the saturation is a bit modest and sometimes decreases the accuracy. To really increase it's accuary we need to train the weights of the models we used.
 The codebase is based of geeksforgeeks code https://www.geeksforgeeks.org/black-and-white-image-colorization-with-opencv-and-deep-learning/ we modified it aswell and added some functionality and made it streamlined for us.
@@ -36,13 +37,27 @@ The codebase is based of geeksforgeeks code https://www.geeksforgeeks.org/black-
 ### Simple model
 As mentioned earlier, this model is only good at restoring the same image. Trying any other results in a mess :P
 ![image](https://user-images.githubusercontent.com/61740233/207275768-096ab527-b976-41b8-a91e-5ecf4960f06b.png)
-As we see with this img the model is trained on the woman and can manage to restore her to colorized but whenever we try to color another image it doesn't give any good results. We tryed applying our preprocessing steps to get better results but nothing worked. The model is just to "dumb" and needs to be trained more.
+As we see with this img the model is trained on the woman and can manage to restore her to colorized but whenever we try to color another image it doesn't give any good results. We tryed applying our preprocessing steps to get better results but nothing worked. The model is just to "dumb" and needs to learn more features through more training data in order to repaint images with greater accuracy.
 
 
 ### Advanced model
-The program did a fairly good job, the main issues we saw were some inaccuracy in shading the colors(T1-T3) and sometimes the backgrounds had innacurate colors(T2). 
+The program did a fairly good job, the main issues we saw were some inaccuracy in shading the colors and sometimes the backgrounds had innacurate colors. This could be mitigated with a larger training set which as limited due to time issues with training so in the current version it only trains on 4 images with the fifth one as testing. I added five more images afterwards to test a little more which can be found in the result folder of advanced_model.
+
+![image](https://user-images.githubusercontent.com/60612841/207373258-902bda39-4fe4-4746-a315-2584db6d88c1.png)
+
+As we can see in the image above the model unsurprisingly managed to repaint one of the training images back to what it looked like before.
+
+![image](https://user-images.githubusercontent.com/60612841/207372486-7b3cb7a9-9ac0-4f04-b7d4-6197a8a7b66e.png)
+
+In the case where the trained model was tested on an image not part of the training set or related to the set of images trained on it did a little less good however it does vary in performance on these images as some of them are pretty well painted with only a few green spots which could be mitigated with a larger trainingset.
+
+![image](https://user-images.githubusercontent.com/60612841/207372980-c5cd05d2-ddfc-4cb5-81ac-b31e453a0e63.png)
+
+Lastly in the case of an image not part of training data but still part of the set of images which was trained with it did well with some colors slightly varied in the background as well as the obvious green beard.
 
 ### Caffemodel / Advanced pre-trained model
+The program did a fairly good job, the main issues we saw were some inaccuracy in shading the colors(T1-T3) and sometimes the backgrounds had innacurate colors(T2).
+
 Here are some of the outpus for the caffemodel, the left picture is the original picture and the right is the colorized.
 
 #### Saturated T1
@@ -78,8 +93,10 @@ The high blue value is due to the really dark blue on the left hand side of the 
 Accuracy:`0.637`, the difference between the two is around `-4.74E-5`
 
 # Evaluation
-## Caffemodel / Advanced pre-trained model
+The advanced model is an improvement of the simple model as it can be trained on more images and as such more features but it requires a lot of time/cpu in order to be created making it somewhat unpractical to train on larger sets of data.
+
 The Caffemodel is a bit innacruate in it's shading of colors and the preprossesing method we used to increase it's saturation does not always better the accuracy. But as forementioned it's hard to develop a method to evaluate colorization accuracy.
+
 
 # Final words
 To train a good model it takes large datasets with a lot of different features. According to our research to train a ok model with verry few features it's normal that it needs to train for 1 day. To get a good model that can find a lot of different features this time takes even longer. Thus it's a good thing that there exists these pre-trained models avalible.
