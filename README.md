@@ -43,10 +43,11 @@ As we see with this img the model is trained on the woman and can manage to rest
 The program did a fairly good job, the main issues we saw were some inaccuracy in shading the colors(T1-T3) and sometimes the backgrounds had innacurate colors(T2). 
 
 ![image](https://user-images.githubusercontent.com/60612841/207373258-902bda39-4fe4-4746-a315-2584db6d88c1.png)
-
+As we can see in the image above the model unsurprisingly managed to repaint one of the training images back to what it looked like before.
 ![image](https://user-images.githubusercontent.com/60612841/207372486-7b3cb7a9-9ac0-4f04-b7d4-6197a8a7b66e.png)
-
+In the case where the trained model was tested on an image not part of the training set or related to the set of images trained on it did a little less good however it does vary in performance on these images as some of them are pretty well painted with only a few green spots which could be mitigated with a larger trainingset.
 ![image](https://user-images.githubusercontent.com/60612841/207372980-c5cd05d2-ddfc-4cb5-81ac-b31e453a0e63.png)
+Lastly in the case of an image not part of training data but still part of the set of images which was trained with it did well with some colors slightly varied in the background as well as the obvious green beard.
 
 
 
