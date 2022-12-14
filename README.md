@@ -1,6 +1,9 @@
-# MiniProject D7041E
+# Black and white Image coloring using NN and deap learning
 
-In this project we have used two models capable of restoring color to grayscale images using neural nets. The accuracy of the models was tested with various preprocessing steps such as color saturization in order to see what effect, positive or negative, these had on the results. By doing this we hope to show two ways of implementing grayscale to color models with neural net and how these are affected by preprocessing. The accuracy of the results is measured by summarizing the amount of pixels containing a differing rgb value compared to the original picture divided by the total amount of pixels in the image.
+## Project description
+This project is part of the LTU course D7031E and was an mini project to experiment and learn how to implement AI. The project was created by Filip B, Fabian W and Martin K.
+
+In this project we have implemented two models capable of restoring color to grayscale images using neural nets, we have also implemented a pre-trained model to compare results. The accuracy of the models was tested with various preprocessing steps such as color saturization in order to see what effect these had on the results. By doing this we hope to show two ways of implementing grayscale to color models with neural net and how these are affected by preprocessing. It is hard to get a good accuracy value from images, most often you have to asses it manually. We tried to create an accuracy by summarizing the amount of different pixels (in rgb value) compared to the original picture, then divided it by the total amount of pixels in the image to get a accuracy percentage.
 
 
 
