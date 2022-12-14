@@ -1,4 +1,4 @@
-# Black and white Image coloring using NN and deap learning
+# Black and white image coloring using NN and deep learning
 
 ## Project description
 This project is part of the LTU course D7031E and was an mini project to experiment and learn how to implement AI. The project was created by Filip B, Fabian W and Martin K.
