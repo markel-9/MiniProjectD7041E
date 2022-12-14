@@ -12,7 +12,7 @@ In order to run our code you need to install a few libries. Most of the librarie
 `pip install keras tensorflow numpy cv2 pillow jupyter scikit-image` To add we used python 3 and the latest version of tensorflow and wrote everything with visual studio code.
 
 ### Simple and Advanced model
-These are very simple to run. Simply download the zip, open it in whatever jupiter ide then install the nessesary libraries.
+These are very simple to run. Simply download the zip, open it in whatever jupiter ide then install the nessesary libraries. When running the advanced model everything in the train folder is going to be trained with, the test folder will subsequently be filled with gray images of the train images so if desired the test folder should be emptied between runs but leaving more pictures there than trained on will simply let the model paint more black and white pictures which takes very little time. the result folder should also when desired be emptied as previous results are not necessarily interesting.
 
 ### Caffemodel / Advanced pre-trained model
 To setup the caffemodel start by downloading the repository and the weights from: https://drive.google.com/drive/folders/1FaDajjtAsntF_Sw5gqF0WyakviA5l8-a and 
