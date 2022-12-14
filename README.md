@@ -96,6 +96,9 @@ The high blue value is due to the really dark blue on the left hand side of the 
 `R: 539267  G: 598991  B: 1024935`
 Accuracy:`0.637`, the difference between the two is around `-4.74E-5`
 
+## Optimizing the model
+We did try changing the value for our algorithm like the epoch setting but we saw low to none results that could be considered inside the margin of error from the model. As mentioned before it's hard to conclude an actual better or worse performance and since the advanced model takes multiple hours to run we didn't experiment with the algorithm too much.
+
 # Evaluation
 The advanced model is an improvement of the simple model as it can be trained on more images and as such more features but it requires a lot of time/cpu in order to be created making it somewhat unpractical to train on larger sets of data.
 
