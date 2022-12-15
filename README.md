@@ -6,6 +6,10 @@ This project is part of the LTU course D7041E and was an mini project to experim
 In this project we have implemented two models capable of restoring color to grayscale images using neural nets, we have also implemented a pre-trained model to compare results. The accuracy of the models was tested with various preprocessing steps such as color saturization in order to see what effect these had on the results. By doing this we hope to show two ways of implementing grayscale to color models with neural net and how these are affected by preprocessing. It is hard to get a good accuracy value from images, most often you have to asses it manually. We tried to create an accuracy by summarizing the amount of different pixels (in rgb value) compared to the original picture, then divided it by the total amount of pixels in the image to get a accuracy percentage.
 Some of the code is inspired from the emilwallner Coloring-greyscale-images project.
 
+## Video overview over project
+We made a video regaring this project if you want to listen instead of reading here. [Black and White Image Colorization - D7041E mini project](https://www.youtube.com/watch?v=j1bdxJPfSrA&ab_channel=fabianwidell)
+
+
 
 
 # Setup
