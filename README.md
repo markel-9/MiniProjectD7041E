@@ -28,7 +28,7 @@ Each black and white image consists of 1 layer where each pixel has a value betw
 This model is a neural net that trains on only one image thus it only becomes good to restore the same image back from black and white to colorized. This has very litte practical use but it is a good entryway to understand the advanced model.
 
 ### Advanced model
-The advanced model uses the principles of the simple model and improves by adding the ability of training more features through training on more images as training data. This takes some time as five images as ipnut data took roughly 1.5 hours so larger sets than that i would recommend leaving the computer on over night with sleep mode disabled to let the model finish. 
+The advanced model uses the principles of the simple model and improves by adding the ability of training more features through training on more images as training data. This takes some time as five images as input data took roughly 1.5 hours so larger sets than that i would recommend leaving the computer on over night with sleep mode disabled to let the model finish. 
 
 ### Caffemodel / Advanced pre-trained model
 Caffeemodel is a deep learning framework and we use already created weights for our testing. The colorizing is fairly good although the size of the weight file is only 126MB so we don't expect anything increadibly accurate.
